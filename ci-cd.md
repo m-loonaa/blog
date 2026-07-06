@@ -1,3 +1,15 @@
+## Self-hosted runners
+
+- [Adding self-hosted runners](https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners)
+
+- [Configuring the self-hosted runner application as a service - Linux](https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/configure-the-application)
+
+- [Using self-hosted runners in a workflow](https://docs.github.com/en/enterprise-cloud@latest/actions/how-tos/manage-runners/self-hosted-runners/use-in-a-workflow)
+
+  ```yml
+  runs-on: [self-hosted, linux, x64]
+  ```
+
 ## GitHub Actions
 
 - [Understanding GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions)
@@ -11,8 +23,9 @@
 ```yaml
 - uses: actions/setup-node@v6
   with:
-    node-version: '24'
+    node-version: "24"
 ```
+
 The `with` keyword is used to pass parameters to the action.
 
 `github-tag-action`: A GitHub Action that tags the repository on merge.
@@ -54,7 +67,7 @@ Run the deployment step only for the main branch: this ensures that deployment h
     # merge_commit_sha: the SHA of the merge commit that GitHub automatically creates for the pull request.
     ref: ${{ github.event.pull_request.merge_commit_sha }}
     # Fetch the full Git history instead of performing a shallow clone.
-    fetch-depth: '0'
+    fetch-depth: "0"
 
 - name: Bump version and push tag
   uses: anothrNick/github-tag-action@1.75.0
@@ -89,6 +102,7 @@ Actions:
 [`URL Health Check`](https://github.com/marketplace/actions/url-health-check)
 
 [`schedule`](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) - Triggers a workflow at a scheduled time.
+
 ```yaml
 on:
   schedule:
@@ -196,14 +210,13 @@ jobs:
         run: echo "$COMMIT_MESSAGES"
 ```
 
-
 ```yaml
 name: Periodic Health Check
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: "*/15 * * * *"
 
 jobs:
   health_check:

@@ -104,6 +104,18 @@ sudo systemctl enable frps
 sudo systemctl enable --now frps
 ```
 
+```
+Host cicada
+HostName <ip>
+Port 22
+User cicada
+IdentityFile
+```
+
+```bash
+ssh cicada
+```
+
 `wget` is a command-line download utility. It fetches the file from the given URL and saves it to the current directory.
 
 `tar` manages archive files.

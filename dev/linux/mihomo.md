@@ -60,3 +60,9 @@ journalctl -u mihomo -o cat -f
 ## Web dashboard
 
 http://127.0.0.1:9090
+
+SSH Port Forwarding
+
+```bash
+ssh -L 9090:127.0.0.1:9090 name@ip
+```
